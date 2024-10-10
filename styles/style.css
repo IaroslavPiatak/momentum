@@ -1,0 +1,169 @@
+* {
+  margin: 0;
+  padding: 0;
+
+}
+
+.main {
+  width: 100vw;
+  height: 100vh;
+  color: #fff; 
+  font-family: Roboto, Arial, sans-serif;
+  transition: background-image 0.5s ease;
+}
+
+.main::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1; /* Убедитесь, что оверлей находится выше фона */
+  background: rgba(0, 0, 0, 0.1);
+}
+
+section {
+  position: relative;
+  z-index: 1;
+}
+
+.weather {
+  padding: 50px;
+  text-align: end;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.dateAndTime {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  padding: 25px;
+}
+
+.time {
+  font-weight: bold;
+  font-size: 136px;
+}
+
+.date {
+  font-size: 36px;
+}
+
+.tasks {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.tasks__title {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.tasks__input {
+  width: auto;
+  min-width: 250px;
+  border: 0;
+  border-bottom: 2px #fff solid;
+  outline: none;
+  color: #fff;
+  font-family: Roboto, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 36px;
+  text-align: center;
+  background-color: inherit;
+  transition: width 0.2s;
+}
+
+.tasks__input::placeholder {
+  color: #fff;
+  text-align: center;
+}
+
+.tasks__list {
+  display: grid;
+  gap: 20px;
+  list-style: none;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.task__text {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+
+.task__checkbox {
+  display: none;
+}
+
+
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+}
+
+.custom-checkbox input:checked + .checkmark {
+  border-color: #4caf50;
+  background-color: #4caf50;
+}
+
+.custom-checkbox input:checked + .checkmark::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 6px;
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.task__button {
+  width: 85px;
+  height: 25px;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  padding: 5px;
+  color: #fff;
+  background-color: inherit;
+  cursor: pointer;
+}
+
+
+.strikethrough {
+  text-decoration: line-through;
+}
+
+.deleteAllTasksButton {
+  border: 2px solid #ec3945;
+  border-radius: 5px;
+  padding: 10px;
+  background-color: inherit;
+  background-color: #ec3945;
+  color: #fff;
+  font-family: Roboto, Arial, sans-serif;
+  font-weight: bold;
+  font-size: 16px;
+  cursor: pointer;
+  display: none;
+}
+  

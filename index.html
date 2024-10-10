@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./fonts/fonts.css" />
+    <title>momentum</title>
+  </head>
+  <body>
+    <main class="main">
+      <section class="weather"></section>
+      <section class="dateAndTime">
+        <div class="time"></div>
+        <div class="date"></div>
+      </section>
+      <section class="tasks">
+        <p class="tasks__title">Список ваших задач</p>
+        <input
+          type="text"
+          class="tasks__input"
+          oninput="this.style.width = (this.value.length + 1) + 'ch'"
+          maxlength="65"
+        />
+        <ul class="tasks__list"></ul>
+        <button type="button" class="deleteAllTasksButton">Удалить все выполненные задачи</button>
+      </section>
+    </main>
+    <script src="/scripts/task.js"></script>
+    <script src="/scripts/backgroundImage.js"></script>
+    <script src="/scripts/dateAndTime.js"></script>
+    <script src="/scripts/index.js"></script>
+
+    <template class="task-template">
+      <li class="task">
+        <label class="custom-checkbox">
+          <input type="checkbox" class="task__checkbox" />
+          <span class="checkmark"></span>
+        </label>
+        <p class="task__text"></p>
+        <button class="task__button">Удалить</button>
+      </li>
+    </template>
+  </body>
+</html>
