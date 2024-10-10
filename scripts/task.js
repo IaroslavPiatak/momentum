@@ -1,4 +1,3 @@
-
 document
   .querySelector(".tasks__input")
   .addEventListener("keypress", function (evt) {
@@ -43,25 +42,23 @@ document
     }
   });
 
-  setInterval(function() {
-    const listLenghtn = document.querySelectorAll(".task").length;
-    if (listLenghtn === 0) {
-      document.querySelector(".deleteAllTasksButton").style.display = "none";
-    } else {
-      document.querySelector(".deleteAllTasksButton").style.display = "block";
-    }
-  }, 1);
+setInterval(function () {
+  const listLenghtn = document.querySelectorAll(".task").length;
+  if (listLenghtn === 0) {
+    document.querySelector(".deleteAllTasksButton").style.display = "none";
+  } else {
+    document.querySelector(".deleteAllTasksButton").style.display = "block";
+  }
+}, 1);
 
-document.querySelector('.deleteAllTasksButton').addEventListener('click', ()=> {
-  const tasks = document.querySelectorAll('.task');
-  tasks.forEach(element => {
-    const checkbox = element.querySelector('.task__checkbox');
-    if(checkbox.checked) {
-      element.remove();
-    }
-  })
-  
-
-})
-
-
+document
+  .querySelector(".deleteAllTasksButton")
+  .addEventListener("click", () => {
+    const tasks = document.querySelectorAll(".task");
+    tasks.forEach((element) => {
+      const checkbox = element.querySelector(".task__checkbox");
+      if (checkbox.checked) {
+        element.remove();
+      }
+    });
+  });

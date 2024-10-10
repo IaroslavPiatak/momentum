@@ -16,7 +16,7 @@
   content: '';
   position: absolute;
   inset: 0;
-  z-index: 1; /* Убедитесь, что оверлей находится выше фона */
+  z-index: 1;
   background: rgba(0, 0, 0, 0.1);
 }
 
@@ -27,9 +27,9 @@ section {
 
 .weather {
   padding: 50px;
-  text-align: end;
-  font-size: 18px;
   font-weight: bold;
+  font-size: 18px;
+  text-align: end;
 }
 
 .dateAndTime {
@@ -154,16 +154,16 @@ section {
 }
 
 .deleteAllTasksButton {
+  display: none;
   border: 2px solid #ec3945;
   border-radius: 5px;
   padding: 10px;
-  background-color: inherit;
-  background-color: #ec3945;
   color: #fff;
   font-family: Roboto, Arial, sans-serif;
   font-weight: bold;
   font-size: 16px;
+  background-color: inherit;
+  background-color: #ec3945;
   cursor: pointer;
-  display: none;
 }
   
