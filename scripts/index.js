@@ -30,16 +30,14 @@ if (navigator.geolocation) {
   alert("Невозможно определить ваше местоположение");
 }
 
-const url = `https://www.7timer.info/bin/api.pl?lon=${localStorage.getItem(
-  "longitude"
-)}&lat=${localStorage.getItem("latitude")}&product=civil&output=json`;
+const url = `https://api.allorigins.win/get?url=${encodeURIComponent('http://www.7timer.info/bin/api.pl?lon=' + localStorage.getItem("longitude") + '&lat=' + localStorage.getItem("latitude") + '&product=civil&output=json')}`;
 
 fetch(url)
   .then((response) => response.json())
   .then((data) => {
-    console.log("Данные о погоде:", data);
-
-    const weatherData = data.dataseries;
+    const parsedData = JSON.parse(data.contents);
+    
+    const weatherData = parsedData.dataseries;
 
     const firstPeriod = weatherData[0];
     const temperature = firstPeriod.temp2m;
