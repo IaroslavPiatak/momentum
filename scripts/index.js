@@ -30,7 +30,7 @@ if (navigator.geolocation) {
   alert("Невозможно определить ваше местоположение");
 }
 
-const url = `http://www.7timer.info/bin/api.pl?lon=${localStorage.getItem(
+const url = `https://www.7timer.info/bin/api.pl?lon=${localStorage.getItem(
   "longitude"
 )}&lat=${localStorage.getItem("latitude")}&product=civil&output=json`;
 
